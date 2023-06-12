@@ -12,10 +12,10 @@ import img4 from "./../../../../public/assets/images/Banner/banner-4.webp";
 import img5 from "./../../../../public/assets/images/Banner/banner-5.webp";
 const Banner = () => {
   return (
-    <div className=" min-h-screen opacity-60">
+    <div className="">
       <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
         <SwiperSlide>
-          <img className="h-1/2" src={img1} alt="" />
+          <img src={img1} alt="" />
         </SwiperSlide>
         <SwiperSlide>
           <img src={img2} alt="" />

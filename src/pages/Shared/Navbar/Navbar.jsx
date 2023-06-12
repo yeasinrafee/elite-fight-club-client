@@ -19,7 +19,7 @@ const Navbar = () => {
     <div>
       <div className="navbar bg-base-100">
         <div className="navbar-start">
-          <div className="dropdown">
+          <div className="dropdown z-10">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -44,7 +44,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case h-16 ">
-            <h2 className="text-2xl font-bold text-amber-400">
+            <h2 className="text-2xl font-bold text-amber-400 ml-14 md:ml-0">
               EliteFight <br />C L U B
             </h2>
           </Link>

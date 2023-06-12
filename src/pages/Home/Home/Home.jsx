@@ -1,10 +1,11 @@
-import useTitle from "../../hooks/useTitle";
+import useTitle from "../../../hooks/useTitle";
+import Banner from "../Banner/Banner";
 
 const Home = () => {
   useTitle("EliteFightClub | Home");
   return (
     <div>
-      <h1>This is home</h1>
+      <Banner />
     </div>
   );
 };

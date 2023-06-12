@@ -1,14 +1,14 @@
 const Footer = () => {
   return (
     <footer className="footer footer-center p-10 bg-amber-50 text-base-content rounded">
-      <div className="grid grid-flow-col gap-4">
+      <div className="grid grid-flow-col gap-4 text-amber-400">
         <a className="link link-hover">About us</a>
         <a className="link link-hover">Contact</a>
-        <a className="link link-hover">Jobs</a>
-        <a className="link link-hover">Press kit</a>
+        <a className="link link-hover">Instructors</a>
+        <a className="link link-hover">Classes</a>
       </div>
       <div>
-        <div className="grid grid-flow-col gap-4">
+        <div className="grid grid-flow-col gap-4 text-amber-400">
           <a>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -45,7 +45,9 @@ const Footer = () => {
         </div>
       </div>
       <div>
-        <p>Copyright © 2023 - All right reserved by @yeasinrafee</p>
+        <p className="text-amber-300">
+          Copyright © 2023 - All right reserved by @yeasinrafee
+        </p>
       </div>
     </footer>
   );

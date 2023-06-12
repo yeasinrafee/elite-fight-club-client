@@ -10,8 +10,8 @@ const TopClasses = () => {
   }, []);
   return (
     <div className="my-28">
-      <h1 className="text-3xl font-bold text-amber-400 text-center mb-8">
-        Top Classes
+      <h1 className="text-3xl font-bold text-amber-400 text-center mb-8 uppercase">
+        Popular Classes
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center items-center gap-6">
         {topClass.map((tClass, i) => (

@@ -8,6 +8,18 @@ const AllUsers = () => {
     return res.json();
   });
 
+  const handleMakeAdmin = (user, event) => {
+    console.log(event);
+    fetch(`http://localhost:5000/users/admin/${user._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        event.target.disabled = true;
+      });
+  };
+
   return (
     <div className="pl-9 w-full">
       <h2 className="text-3xl font-semibold text-amber-400 my-7">
@@ -33,7 +45,10 @@ const AllUsers = () => {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>
-                  <button className="btn btn-outline btn-warning btn-xs">
+                  <button
+                    onClick={handleMakeAdmin.bind(null, user)}
+                    className="btn btn-outline btn-warning btn-xs"
+                  >
                     Admin
                   </button>
                 </td>

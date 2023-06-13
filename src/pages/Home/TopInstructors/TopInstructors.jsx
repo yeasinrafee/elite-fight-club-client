@@ -1,4 +1,3 @@
-import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -25,8 +24,8 @@ const TopInstructors = () => {
           className="mySwiper mb-24"
         >
           {instructors &&
-            instructors.map((instructor, i) => (
-              <SwiperSlide key={i}>
+            instructors.map((instructor) => (
+              <SwiperSlide key={instructor._id}>
                 <img src={instructor.image} alt="" />
                 <h3 className="text-2xl uppercase text-center -mt-16 text-black">
                   {instructor.name}

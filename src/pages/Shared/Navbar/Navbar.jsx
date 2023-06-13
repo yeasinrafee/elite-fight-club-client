@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../providers/AuthProvider";
+import { FaUserCircle } from "react-icons/fa";
+import Tippy from "@tippyjs/react";
+import "tippy.js/dist/tippy.css";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
   const navMenu = (
     <>
       <li>
@@ -12,9 +18,37 @@ const Navbar = () => {
       <li>
         <Link to="classes">Classes</Link>
       </li>
-      <li>
-        <Link to="login">Login</Link>
-      </li>
+      {user ? (
+        <>
+          <li>
+            <Link to="dashboard">Dashboard</Link>
+          </li>
+          <li>
+            {
+              <Tippy content={user && user?.displayName}>
+                {user?.photoURL ? (
+                  <img
+                    className="w-[65px] h-[60px] rounded-full"
+                    src={user.photoURL}
+                    alt="User Image"
+                  />
+                ) : (
+                  <Link to="/user">
+                    <FaUserCircle className="text-2xl" />
+                  </Link>
+                )}
+              </Tippy>
+            }
+          </li>
+          <li className="border rounded-md hover:bg-amber-500">
+            <Link onClick={() => logOut()}>Logout</Link>
+          </li>
+        </>
+      ) : (
+        <li className="border rounded-md hover:bg-amber-500">
+          <Link to="/login">Login</Link>
+        </li>
+      )}
       {/* TODO: Dynamic Options */}
     </>
   );

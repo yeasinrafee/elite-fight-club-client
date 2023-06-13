@@ -1,13 +1,16 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useTitle from "../../hooks/useTitle";
+import { AuthContext } from "../../providers/AuthProvider";
 
 const Login = () => {
   useTitle("EliteFightClub | Login");
+
   const [error, setError] = useState("");
+  const { logIn } = useContext(AuthContext);
+
   const navigate = useNavigate();
   const location = useLocation();
-
   const from = location?.state?.from?.pathname || "/";
 
   const handleLogin = (e) => {
@@ -32,15 +35,15 @@ const Login = () => {
     //   }
     // }
 
-    // Login Authentication
-    // logIn(email, password)
-    //   .then((result) => {
-    //     const loggedUser = result.user;
-    //     console.log(loggedUser);
-    //     form.reset();
-    //     navigate(from, { replace: true });
-    //   })
-    //   .catch((err) => console.log(err));
+    //Login Authentication
+    logIn(email, password)
+      .then((result) => {
+        const loggedUser = result.user;
+        console.log(loggedUser);
+        form.reset();
+        navigate(from, { replace: true });
+      })
+      .catch((err) => console.log(err));
   };
 
   // Handle Google Login

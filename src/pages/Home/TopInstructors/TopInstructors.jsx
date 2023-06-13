@@ -3,15 +3,11 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Pagination } from "swiper";
+import useInstructors from "../../../hooks/useInstructors";
 
 const TopInstructors = () => {
-  const [instructors, setInstructors] = useState([]);
+  const [instructors] = useInstructors();
 
-  useEffect(() => {
-    fetch("http://localhost:5000/instructors")
-      .then((res) => res.json())
-      .then((data) => setInstructors(data));
-  }, []);
   return (
     <div>
       <h2 className="text-3xl font-bold text-amber-400 text-center mb-8 uppercase">
@@ -28,14 +24,15 @@ const TopInstructors = () => {
           modules={[Pagination]}
           className="mySwiper mb-24"
         >
-          {instructors.map((instructor, i) => (
-            <SwiperSlide key={i}>
-              <img src={instructor.image} alt="" />
-              <h3 className="text-2xl uppercase text-center -mt-16 text-black">
-                {instructor.name}
-              </h3>
-            </SwiperSlide>
-          ))}
+          {instructors &&
+            instructors.map((instructor, i) => (
+              <SwiperSlide key={i}>
+                <img src={instructor.image} alt="" />
+                <h3 className="text-2xl uppercase text-center -mt-16 text-black">
+                  {instructor.name}
+                </h3>
+              </SwiperSlide>
+            ))}
         </Swiper>
       </div>
     </div>

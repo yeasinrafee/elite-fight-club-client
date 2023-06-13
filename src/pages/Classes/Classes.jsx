@@ -1,6 +1,8 @@
 import useClasses from "../../hooks/useClasses";
+import useTitle from "../../hooks/useTitle";
 
 const Classes = () => {
+  useTitle("EliteFightClub | Classes");
   const [classes] = useClasses();
   console.log(classes);
   return (

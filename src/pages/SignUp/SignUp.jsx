@@ -16,8 +16,6 @@ const SignUp = () => {
   } = useForm();
 
   const onSubmit = (data) => {
-    console.log(data);
-
     createUser(data.email, data.password)
       .then((result) => {
         const user = result.user;
@@ -25,11 +23,24 @@ const SignUp = () => {
         // It'll update the user name and Photo
         updateUser(data.name, data.photo)
           .then(() => {
-            console.log("User Updated");
+            const saveUser = { name: data.name, email: data.email };
+            fetch("http://localhost:5000/users", {
+              method: "POST",
+              headers: {
+                "content-type": "application/json",
+              },
+              body: JSON.stringify(saveUser),
+            })
+              .then((res) => res.json())
+              .then((data) => {
+                if (data.insertedId) {
+                  console.log("User Updated");
+                  navigate("/");
+                }
+              });
           })
           .catch((err) => console.log(err));
         console.log(user);
-        navigate("/");
       })
       .catch((err) => console.log(err));
   };

@@ -1,6 +1,8 @@
 import useInstructors from "../../hooks/useInstructors";
+import useTitle from "../../hooks/useTitle";
 
 const Instructors = () => {
+  useTitle("EliteFightClub | Instructors");
   const [instructors] = useInstructors();
   console.log(instructors);
   return (

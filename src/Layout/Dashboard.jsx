@@ -4,10 +4,14 @@ import {
   FaHome,
   FaListAlt,
   FaPaypal,
+  FaUsers,
 } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 
 const Dashboard = () => {
+  // TODO:
+  const isAdmin = true;
+  const isInstructor = true;
   return (
     <div className="drawer lg:drawer-open">
       <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
@@ -26,21 +30,39 @@ const Dashboard = () => {
         <ul className="menu p-4 w-80 h-full bg-yellow-100 text-base-content">
           {/* Sidebar content here */}
 
-          <li>
-            <NavLink to="myclasses">
-              <FaCheckSquare /> Selected Classes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="enrolledClasses">
-              <FaCheckCircle /> Enrolled Classes
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="payment">
-              <FaPaypal /> Payment History
-            </NavLink>
-          </li>
+          {isAdmin ? (
+            <>
+              <li>
+                <NavLink to="allclasses">
+                  <FaCheckSquare /> All Classes
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="allusers">
+                  <FaUsers /> Manage Users
+                </NavLink>
+              </li>
+            </>
+          ) : (
+            <>
+              <li>
+                <NavLink to="myclasses">
+                  <FaCheckSquare /> Selected Classes
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="enrolledClasses">
+                  <FaCheckCircle /> Enrolled Classes
+                </NavLink>
+              </li>
+              <li>
+                <NavLink to="payment">
+                  <FaPaypal /> Payment History
+                </NavLink>
+              </li>
+            </>
+          )}
+
           <div className="divider"></div>
           <li>
             <NavLink to="/">

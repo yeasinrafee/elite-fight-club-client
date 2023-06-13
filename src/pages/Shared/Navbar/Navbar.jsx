@@ -13,7 +13,7 @@ const Navbar = () => {
         <Link to="/">Home</Link>
       </li>
       <li>
-        <Link to="instructor">Instructors</Link>
+        <Link to="instructors">Instructors</Link>
       </li>
       <li>
         <Link to="classes">Classes</Link>
@@ -53,7 +53,7 @@ const Navbar = () => {
   );
   return (
     <div className="mb-5">
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-yellow-50 py-4 px-5">
         <div className="navbar-start">
           <div className="dropdown z-10">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">

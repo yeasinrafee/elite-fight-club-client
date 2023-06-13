@@ -104,7 +104,7 @@ const Login = () => {
         </button>
       </div>
       <p className="my-5 text-center text-sm">
-        New to service?{" "}
+        New here?{" "}
         <Link to="/signup" className="text-amber-400 font-bold">
           Sign Up
         </Link>

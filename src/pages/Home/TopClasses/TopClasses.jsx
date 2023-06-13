@@ -4,7 +4,7 @@ const TopClasses = () => {
   const [topClass, setTopClass] = useState([]);
 
   useEffect(() => {
-    fetch("classData.json")
+    fetch("http://localhost:5000/classes")
       .then((res) => res.json())
       .then((data) => setTopClass(data));
   }, []);

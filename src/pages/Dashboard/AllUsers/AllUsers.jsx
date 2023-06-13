@@ -8,15 +8,24 @@ const AllUsers = () => {
     return res.json();
   });
 
-  const handleMakeAdmin = (user, event) => {
-    console.log(event);
+  const handleMakeAdmin = (user) => {
     fetch(`http://localhost:5000/users/admin/${user._id}`, {
       method: "PATCH",
     })
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
-        event.target.disabled = true;
+        refetch();
+      });
+  };
+  const handleMakeInstructor = (user) => {
+    fetch(`http://localhost:5000/users/instructor/${user._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        refetch();
       });
   };
 
@@ -46,14 +55,19 @@ const AllUsers = () => {
                 <td>{user.email}</td>
                 <td>
                   <button
-                    onClick={handleMakeAdmin.bind(null, user)}
+                    disabled={user.role === "admin" ? true : false}
+                    onClick={() => handleMakeAdmin(user)}
                     className="btn btn-outline btn-warning btn-xs"
                   >
                     Admin
                   </button>
                 </td>
                 <td>
-                  <button className="btn btn-outline btn-warning btn-xs">
+                  <button
+                    disabled={user.role === "instructor" ? true : false}
+                    onClick={() => handleMakeInstructor(user)}
+                    className="btn btn-outline btn-warning btn-xs"
+                  >
                     Instructor
                   </button>
                 </td>

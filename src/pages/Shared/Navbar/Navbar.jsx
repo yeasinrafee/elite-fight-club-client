@@ -49,7 +49,6 @@ const Navbar = () => {
           <Link to="/login">Login</Link>
         </li>
       )}
-      {/* TODO: Dynamic Options */}
     </>
   );
   return (

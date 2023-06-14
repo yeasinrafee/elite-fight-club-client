@@ -37,12 +37,11 @@ const AuthProvider = ({ children }) => {
           .then((data) => {
             // console.log(data.data.token);
             localStorage.setItem("access_token", data.data.token);
+            setLoading(false);
           });
       } else {
         localStorage.removeItem("access_token");
       }
-
-      setLoading(false);
     });
     return () => {
       return unsubscribe();

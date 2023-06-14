@@ -1,7 +1,27 @@
 import useClasses from "../../hooks/useClasses";
 
 const AllClasses = () => {
-  const [classes] = useClasses();
+  const [classes, , refetch] = useClasses();
+  const handleApprove = (classes) => {
+    fetch(`http://localhost:5000/classes/approve/${classes._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        refetch();
+      });
+  };
+  const handleDeny = (classes) => {
+    fetch(`http://localhost:5000/classes/deny/${classes._id}`, {
+      method: "PATCH",
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        console.log(data);
+        refetch();
+      });
+  };
   return (
     <div>
       <h2 className="text-3xl font-bold text-amber-400 text-center mb-8 uppercase">
@@ -44,10 +64,30 @@ const AllClasses = () => {
                   <span className="uppercase">{singleClass.status}</span>
                 </p>
                 <div className="card-actions justify-between items-center mt-6">
-                  <button className="btn btn-primary btn-sm bg-green-400 hover:bg-green-600 border-none text-white">
+                  <button
+                    className="btn btn-primary btn-sm bg-green-400 hover:bg-green-600 border-none text-white"
+                    onClick={() => handleApprove(singleClass)}
+                    disabled={
+                      singleClass.status === "approved"
+                        ? true
+                        : singleClass.status === "denied"
+                        ? true
+                        : false
+                    }
+                  >
                     approve
                   </button>
-                  <button className="btn btn-primary btn-sm bg-red-400 hover:bg-red-600 border-none text-white">
+                  <button
+                    className="btn btn-primary btn-sm bg-red-400 hover:bg-red-600 border-none text-white"
+                    onClick={() => handleDeny(singleClass)}
+                    disabled={
+                      singleClass.status === "denied"
+                        ? true
+                        : singleClass.status === "approved"
+                        ? true
+                        : false
+                    }
+                  >
                     Deny
                   </button>
                   <button className="btn btn-primary btn-sm bg-amber-400 hover:bg-amber-600 border-none text-white">

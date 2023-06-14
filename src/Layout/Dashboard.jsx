@@ -7,10 +7,12 @@ import {
   FaUsers,
 } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
+import useAdmin from "../hooks/useAdmin";
 
 const Dashboard = () => {
   // TODO:
-  const isAdmin = true;
+  // const isAdmin = true;
+  const [isAdmin] = useAdmin();
   const isInstructor = false;
   return (
     <div className="drawer lg:drawer-open">

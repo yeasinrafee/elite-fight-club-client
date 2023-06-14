@@ -11,6 +11,7 @@ import MyClasses from "../pages/Dashboard/MyClasses/MyClasses";
 import PrivateRoute from "./PrivateRoute";
 import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import AllClasses from "../pages/AllClasses/AllClasses";
+import Feedback from "../pages/Feedback/Feedback";
 
 export const router = createBrowserRouter([
   {
@@ -59,6 +60,10 @@ export const router = createBrowserRouter([
       {
         path: "allclasses",
         element: <AllClasses />,
+      },
+      {
+        path: "feedback",
+        element: <Feedback />,
       },
     ],
   },

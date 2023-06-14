@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import useClasses from "../../hooks/useClasses";
 
 const AllClasses = () => {
@@ -22,6 +23,7 @@ const AllClasses = () => {
         refetch();
       });
   };
+
   return (
     <div>
       <h2 className="text-3xl font-bold text-amber-400 text-center mb-8 uppercase">
@@ -91,7 +93,7 @@ const AllClasses = () => {
                     Deny
                   </button>
                   <button className="btn btn-primary btn-sm bg-amber-400 hover:bg-amber-600 border-none text-white">
-                    feedback
+                    <Link to="/dashboard/feedback">feedback</Link>
                   </button>
                 </div>
               </div>

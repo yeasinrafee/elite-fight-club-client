@@ -48,8 +48,8 @@ const Login = () => {
           .then((data) => {
             if (data.insertedId) {
               console.log(user);
-              navigate(from, { replace: true });
             }
+            navigate(from, { replace: true });
           });
       })
       .catch((err) => {

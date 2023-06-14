@@ -4,7 +4,6 @@ import useTitle from "../../hooks/useTitle";
 const Classes = () => {
   useTitle("EliteFightClub | Classes");
   const [classes] = useClasses();
-  console.log(classes);
   return (
     <div>
       <h2 className="text-4xl font-bold text-amber-400 text-center uppercase my-12 ">

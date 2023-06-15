@@ -68,7 +68,7 @@ const SingleSelectedClass = ({ singleClass, refetch }) => {
         </p>
         <div className="card-actions justify-between items-center mt-9">
           <button className="btn btn-primary bg-green-400 hover:bg-green-600 border-none text-white">
-            <Link to="/dashboard/payment">Pay Class</Link>
+            <Link to={`/dashboard/payment/${price}`}>Pay Class</Link>
           </button>
           <button
             onClick={() => handleDelete(singleClass)}

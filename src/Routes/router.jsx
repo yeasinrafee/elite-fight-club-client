@@ -13,6 +13,9 @@ import AllUsers from "../pages/Dashboard/AllUsers/AllUsers";
 import AllClasses from "../pages/AllClasses/AllClasses";
 import Feedback from "../pages/Feedback/Feedback";
 import AddAClass from "../pages/Dashboard/AddAClass/AddAClass";
+import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass";
+import EnrolledClass from "../pages/Dashboard/EnrolledClass/EnrolledClass";
+import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
 
 export const router = createBrowserRouter([
   {
@@ -70,6 +73,18 @@ export const router = createBrowserRouter([
       {
         path: "feedback",
         element: <Feedback />,
+      },
+      {
+        path: "selectedclasses",
+        element: <SelectedClass />,
+      },
+      {
+        path: "enrolledclasses",
+        element: <EnrolledClass />,
+      },
+      {
+        path: "payment",
+        element: <PaymentHistory />,
       },
     ],
   },

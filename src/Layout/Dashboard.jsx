@@ -60,12 +60,12 @@ const Dashboard = () => {
           ) : (
             <>
               <li>
-                <NavLink to="selsectedclasses">
+                <NavLink to="selectedclasses">
                   <FaCheckSquare /> Selected Classes
                 </NavLink>
               </li>
               <li>
-                <NavLink to="enrolledClasses">
+                <NavLink to="enrolledclasses">
                   <FaCheckCircle /> Enrolled Classes
                 </NavLink>
               </li>

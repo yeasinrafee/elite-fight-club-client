@@ -25,7 +25,7 @@ const AllClasses = () => {
   };
 
   return (
-    <div>
+    <div className="ml-10">
       <h2 className="text-3xl font-bold text-amber-400 text-center my-8 uppercase">
         All Classes: {classes?.length}
       </h2>

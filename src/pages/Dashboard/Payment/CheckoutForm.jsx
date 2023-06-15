@@ -10,6 +10,8 @@ const CheckoutForm = ({ classPrice }) => {
   const [axiosSecure] = useAxiosSecure();
   const [cardError, setCardError] = useState("");
   const [clientSecret, setClientSecret] = useState("");
+  const [processing, setProcessing] = useState(false);
+  const [transactionId, setTransactionId] = useState("");
 
   useEffect(() => {
     if (classPrice > 0) {
@@ -46,6 +48,8 @@ const CheckoutForm = ({ classPrice }) => {
       //   console.log(paymentMethod);
     }
 
+    setProcessing(true);
+
     const { paymentIntent, error: confirmError } =
       await stripe.confirmCardPayment(clientSecret, {
         payment_method: {
@@ -61,6 +65,13 @@ const CheckoutForm = ({ classPrice }) => {
       console.log(confirmError);
     }
     console.log(paymentIntent);
+
+    setProcessing(false);
+
+    if (paymentIntent.status === "succeeded") {
+      setTransactionId(paymentIntent.id);
+      const transactionId = paymentIntent.id;
+    }
   };
   return (
     <>
@@ -84,12 +95,17 @@ const CheckoutForm = ({ classPrice }) => {
         <button
           className="btn btn-warning btn-sm mt-7 text-white"
           type="submit"
-          disabled={!stripe}
+          disabled={!stripe || !clientSecret || processing}
         >
           Pay
         </button>
       </form>
       {cardError && <p className="text-red-600 mt-5">{cardError}</p>}
+      {transactionId && (
+        <p className="text-green-500 mt-5">
+          Transaction completed, Your transactionId: {transactionId}
+        </p>
+      )}
     </>
   );
 };

@@ -16,6 +16,8 @@ import AddAClass from "../pages/Dashboard/AddAClass/AddAClass";
 import SelectedClass from "../pages/Dashboard/SelectedClass/SelectedClass";
 import EnrolledClass from "../pages/Dashboard/EnrolledClass/EnrolledClass";
 import PaymentHistory from "../pages/Dashboard/PaymentHistory/PaymentHistory";
+import AdminRoute from "./AdminRoute";
+import InstructorRoute from "./InstructorRoute";
 
 export const router = createBrowserRouter([
   {
@@ -55,24 +57,44 @@ export const router = createBrowserRouter([
     children: [
       {
         path: "addAclass",
-        element: <AddAClass />,
+        element: (
+          <InstructorRoute>
+            <AddAClass />
+          </InstructorRoute>
+        ),
       },
 
       {
         path: "myclasses",
-        element: <MyClasses />,
+        element: (
+          <InstructorRoute>
+            <MyClasses />
+          </InstructorRoute>
+        ),
       },
       {
         path: "allusers",
-        element: <AllUsers />,
+        element: (
+          <AdminRoute>
+            <AllUsers />
+          </AdminRoute>
+        ),
       },
       {
         path: "allclasses",
-        element: <AllClasses />,
+        element: (
+          <AdminRoute>
+            <AllClasses />
+          </AdminRoute>
+        ),
       },
       {
         path: "feedback",
-        element: <Feedback />,
+        element: (
+          <AdminRoute>
+            <Feedback />
+          </AdminRoute>
+        ),
       },
       {
         path: "selectedclasses",

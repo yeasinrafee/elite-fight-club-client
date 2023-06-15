@@ -1,4 +1,6 @@
-const SingleSelectedClass = ({ singleClass }) => {
+import Swal from "sweetalert2";
+
+const SingleSelectedClass = ({ singleClass, refetch }) => {
   const {
     _id,
     class_name,
@@ -9,6 +11,32 @@ const SingleSelectedClass = ({ singleClass }) => {
     number_of_students,
     price,
   } = singleClass;
+
+  const handleDelete = (singleClass) => {
+    console.log(singleClass);
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/selected/${singleClass._id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              refetch();
+              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+            }
+          });
+      }
+    });
+  };
   return (
     <div key={_id} className="card w-96 bg-base-100 shadow-xl">
       <figure>
@@ -41,7 +69,10 @@ const SingleSelectedClass = ({ singleClass }) => {
           <button className="btn btn-primary bg-green-400 hover:bg-green-600 border-none text-white">
             Pay Class
           </button>
-          <button className="btn btn-primary bg-red-400 hover:bg-red-600 border-none text-white">
+          <button
+            onClick={() => handleDelete(singleClass)}
+            className="btn btn-primary bg-red-400 hover:bg-red-600 border-none text-white"
+          >
             delete
           </button>
         </div>

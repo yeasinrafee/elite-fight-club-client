@@ -2,7 +2,7 @@ import useSelectedClass from "../../../hooks/useSelectedClass";
 import SingleSelectedClass from "../../SingleSelectedClass/SingleSelectedClass";
 
 const SelectedClass = () => {
-  const [selected] = useSelectedClass();
+  const [selected, , refetch] = useSelectedClass();
 
   return (
     <div>
@@ -15,6 +15,7 @@ const SelectedClass = () => {
             <SingleSelectedClass
               key={singleClass._id}
               singleClass={singleClass}
+              refetch={refetch}
             />
           ))}
       </div>

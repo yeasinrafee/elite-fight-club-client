@@ -4,20 +4,40 @@ import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 const SingleClass = ({ singleClass }) => {
   console.log(singleClass);
-  const { _id, class_name, image, instructor_name, available_seats, price } =
-    singleClass;
+  const {
+    _id,
+    class_name,
+    image,
+    instructor_name,
+    instructor_email,
+    available_seats,
+    number_of_students,
+    price,
+  } = singleClass;
   const { user } = useContext(AuthContext);
+  console.log(user);
   const navigate = useNavigate();
   const location = useLocation();
   const handleSelectClass = (singleClass) => {
     console.log(singleClass);
-    if (user) {
+    if (user && user.email) {
+      const selectedClass = {
+        classId: _id,
+        class_name,
+        image,
+        instructor_name,
+        instructor_email,
+        available_seats,
+        number_of_students,
+        price,
+        email: user.email,
+      };
       fetch("http://localhost:5000/selected", {
         method: "POST",
         headers: {
           "content-type": "application/json",
         },
-        body: JSON.stringify(singleClass),
+        body: JSON.stringify(selectedClass),
       })
         .then((res) => res.json())
         .then((data) => {
@@ -60,6 +80,7 @@ const SingleClass = ({ singleClass }) => {
           <button
             onClick={() => handleSelectClass(singleClass)}
             className="btn btn-primary bg-amber-400 hover:bg-amber-600 border-none text-white"
+            disabled={available_seats === 0 ? true : false}
           >
             select
           </button>

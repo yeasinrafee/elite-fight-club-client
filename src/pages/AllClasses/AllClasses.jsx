@@ -93,7 +93,9 @@ const AllClasses = () => {
                     Deny
                   </button>
                   <button className="btn btn-primary btn-sm bg-amber-400 hover:bg-amber-600 border-none text-white">
-                    <Link to="/dashboard/feedback">feedback</Link>
+                    <Link to={`/dashboard/feedback/${singleClass._id}`}>
+                      feedback
+                    </Link>
                   </button>
                 </div>
               </div>

@@ -57,7 +57,11 @@ const AllUsers = () => {
                 <td>{user.email}</td>
                 <td>
                   <button
-                    disabled={user.role === "admin" ? true : false}
+                    disabled={
+                      user.role === "admin" || user.role === "instructor"
+                        ? true
+                        : false
+                    }
                     onClick={() => handleMakeAdmin(user)}
                     className="btn btn-outline btn-warning btn-xs"
                   >
@@ -66,7 +70,11 @@ const AllUsers = () => {
                 </td>
                 <td>
                   <button
-                    disabled={user.role === "instructor" ? true : false}
+                    disabled={
+                      user.role === "instructor" || user.role === "admin"
+                        ? true
+                        : false
+                    }
                     onClick={() => handleMakeInstructor(user)}
                     className="btn btn-outline btn-warning btn-xs"
                   >

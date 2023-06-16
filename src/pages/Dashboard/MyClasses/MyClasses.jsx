@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../../providers/AuthProvider";
-import { Link } from "react-router-dom";
 
 const MyClasses = () => {
   const { user } = useContext(AuthContext);
@@ -61,7 +60,7 @@ const MyClasses = () => {
                 )}
                 <div className="card-actions justify-between items-center mt-6">
                   <button className="btn btn-primary btn-sm bg-amber-400 hover:bg-amber-600 border-none text-white">
-                    <Link to="/dashboard/feedback">update</Link>
+                    update
                   </button>
                 </div>
               </div>

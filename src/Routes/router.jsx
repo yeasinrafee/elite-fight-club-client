@@ -115,7 +115,7 @@ export const router = createBrowserRouter([
         ),
       },
       {
-        path: "payment/:price",
+        path: "payment/:id",
         element: (
           <StudentRoute>
             <Payment />

@@ -3,7 +3,7 @@ import { useContext, useEffect, useState } from "react";
 import useAxiosSecure from "../../../hooks/useAxiosSecure";
 import { AuthContext } from "../../../providers/AuthProvider";
 
-const CheckoutForm = ({ classPrice }) => {
+const CheckoutForm = ({ id }) => {
   const stripe = useStripe();
   const elements = useElements();
   const { user } = useContext(AuthContext);
@@ -12,6 +12,24 @@ const CheckoutForm = ({ classPrice }) => {
   const [clientSecret, setClientSecret] = useState("");
   const [processing, setProcessing] = useState(false);
   const [transactionId, setTransactionId] = useState("");
+
+  const [selectedClass, setSelectedClass] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/selected/${id}`)
+      .then((res) => res.json())
+      .then((data) => setSelectedClass(data));
+  }, []);
+
+  const {
+    _id,
+    classId,
+    class_name,
+    image,
+    instructor_name,
+    instructor_email,
+    available_seats,
+    price: classPrice,
+  } = selectedClass;
 
   useEffect(() => {
     if (classPrice > 0) {
@@ -70,7 +88,27 @@ const CheckoutForm = ({ classPrice }) => {
 
     if (paymentIntent.status === "succeeded") {
       setTransactionId(paymentIntent.id);
-      const transactionId = paymentIntent.id;
+
+      const payment = {
+        email: user?.email,
+        transactionId: paymentIntent.id,
+        classPrice,
+        data: new Date(),
+        selectedClassId: _id,
+        classId,
+        class_name,
+        image,
+        instructor_name,
+        instructor_email,
+        available_seats,
+      };
+
+      axiosSecure.post("/payments", payment).then((res) => {
+        console.log(res.data);
+        if (res.data.insertedId) {
+          //display
+        }
+      });
     }
   };
   return (

@@ -9,7 +9,7 @@ const TopClasses = () => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center items-center gap-6">
         {classes &&
-          classes.map((tClass) => (
+          classes.slice(0, 6).map((tClass) => (
             <div
               key={tClass._id}
               className="card card-compact w-96 bg-base-100 shadow-xl h-full"

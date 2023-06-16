@@ -16,12 +16,19 @@ Hosted in Firebase -> [EliteFightClub](https://elite-fight-club.web.app/)
 - Single Page Application
 - Dynamic Website
 - Email Password Authentication
-- Google/Github Authentication
-- Getting Italian Chefs and their top 3 recipes
+- Google Authentication
+- Three roles of the user (admin, instructor and student)
+- Admin can handle all the functionalities
+- An Instructor can create a class and put class details
+- Instructor can also update the class and able to see all the classes he/she added
+- Student can able to see all the classes
+- They can also pay for the class and start join the class
 - Using Animation on UI
 
-* Show Blogs
-* Authenticaton
+* Authentication
+* Verification using JWT (json web tokens)
+* TanStack Query
+* Axios
 
 ## API
 
@@ -34,3 +41,15 @@ Documentation Link -> [Link](https://reactrouter.com/en/main/start/overview)
 ## Tailwind
 
 Documentation Link -> [Link](https://tailwindcss.com/docs/installation)
+
+## JWT
+
+Documentation Link -> [Link](https://jwt.io/)
+
+## TanStack Query
+
+Documentation Link -> [Link](https://tanstack.com/query/latest)
+
+## Axios
+
+Documentation Link -> [Link](https://axios-http.com/docs/intro)

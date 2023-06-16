@@ -27,7 +27,6 @@ const AddAClass = () => {
       status,
       feedback,
     };
-    console.log(classData);
 
     fetch("http://localhost:5000/addClass", {
       method: "POST",

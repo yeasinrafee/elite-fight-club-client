@@ -14,7 +14,6 @@ const SingleSelectedClass = ({ singleClass, refetch }) => {
   } = singleClass;
 
   const handleDelete = (singleClass) => {
-    console.log(singleClass);
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",

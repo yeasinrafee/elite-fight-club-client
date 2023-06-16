@@ -3,14 +3,12 @@ import Swal from "sweetalert2";
 
 const Feedback = () => {
   const { id } = useParams();
-  console.log(id);
 
   const handleFeedback = (e) => {
     e.preventDefault();
     const form = e.target;
     const feedback = form.feedback.value;
-    console.log(feedback);
-    fetch(`http://localhost:5000/classes/${id}`, {
+    fetch(`http://localhost:5000/classes/feedback/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

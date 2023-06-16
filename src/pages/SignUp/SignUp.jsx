@@ -38,7 +38,6 @@ const SignUp = () => {
               .then((res) => res.json())
               .then((data) => {
                 if (data.insertedId) {
-                  console.log("User Updated");
                   navigate("/");
                 }
               });

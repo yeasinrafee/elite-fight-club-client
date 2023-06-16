@@ -34,7 +34,11 @@ const Login = () => {
     googleLogIn()
       .then((result) => {
         const user = result.user;
-        const saveUser = { name: user.displayName, email: user.email };
+        const saveUser = {
+          name: user.displayName,
+          email: user.email,
+          role: "student",
+        };
         fetch("http://localhost:5000/users", {
           method: "POST",
           headers: {

@@ -12,7 +12,7 @@ const MyClasses = () => {
       });
   }, [user?.email]);
   return (
-    <div>
+    <div className="ml-8">
       <h2 className="text-3xl text-amber-400 font-bold text-center">
         Your Classes
       </h2>

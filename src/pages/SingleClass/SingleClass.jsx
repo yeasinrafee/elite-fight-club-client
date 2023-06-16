@@ -50,7 +50,6 @@ const SingleClass = ({ singleClass }) => {
           }
         });
     } else {
-      console.log("hello");
       navigate("/login", { state: { from: location } });
     }
   };

@@ -5,11 +5,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper";
 
-import img1 from "./../../../../public/assets/images/Banner/banner-1.webp";
-import img2 from "./../../../../public/assets/images/Banner/banner-2.webp";
-import img3 from "./../../../../public/assets/images/Banner/banner-3.webp";
-import img4 from "./../../../../public/assets/images/Banner/banner-4.webp";
-import img5 from "./../../../../public/assets/images/Banner/banner-5.webp";
+import img1 from "/assets/images/Banner/banner-1.webp";
+import img2 from "/assets/images/Banner/banner-2.webp";
+import img3 from "/assets/images/Banner/banner-3.webp";
+import img4 from "/assets/images/Banner/banner-4.webp";
+import img5 from "/assets/images/Banner/banner-5.webp";
 const Banner = () => {
   return (
     <div className="">

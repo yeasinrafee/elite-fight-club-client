@@ -5,7 +5,7 @@ const MyClasses = () => {
   const { user } = useContext(AuthContext);
   const [myClasses, setMyClasses] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/classes/${user?.email}`)
+    fetch(`https://elite-fight-club-server.vercel.app/classes/${user?.email}`)
       .then((res) => res.json())
       .then((data) => {
         setMyClasses(data);

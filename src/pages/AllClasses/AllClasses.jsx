@@ -4,9 +4,12 @@ import useClasses from "../../hooks/useClasses";
 const AllClasses = () => {
   const [classes, , refetch] = useClasses();
   const handleApprove = (classes) => {
-    fetch(`http://localhost:5000/classes/approve/${classes._id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://elite-fight-club-server.vercel.app/classes/approve/${classes._id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);
@@ -14,9 +17,12 @@ const AllClasses = () => {
       });
   };
   const handleDeny = (classes) => {
-    fetch(`http://localhost:5000/classes/deny/${classes._id}`, {
-      method: "PATCH",
-    })
+    fetch(
+      `https://elite-fight-club-server.vercel.app/classes/deny/${classes._id}`,
+      {
+        method: "PATCH",
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         console.log(data);

@@ -15,7 +15,7 @@ const CheckoutForm = ({ id }) => {
 
   const [selectedClass, setSelectedClass] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/selected/${id}`)
+    fetch(`https://elite-fight-club-server.vercel.app/selected/${id}`)
       .then((res) => res.json())
       .then((data) => setSelectedClass(data));
   }, []);

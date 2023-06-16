@@ -10,7 +10,7 @@ const useClasses = () => {
   } = useQuery({
     queryKey: ["classes"],
     // queryFn: async () => {
-    //   const response = await fetch(`http://localhost:5000/classes`);
+    //   const response = await fetch(`https://elite-fight-club-server.vercel.app/classes`);
     //   return response.json();
     // },
     queryFn: async () => {

@@ -28,7 +28,7 @@ const AddAClass = () => {
       feedback,
     };
 
-    fetch("http://localhost:5000/addClass", {
+    fetch("https://elite-fight-club-server.vercel.app/addClass", {
       method: "POST",
       headers: {
         "content-type": "application/json",

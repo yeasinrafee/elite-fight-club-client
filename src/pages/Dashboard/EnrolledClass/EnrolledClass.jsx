@@ -6,7 +6,7 @@ const EnrolledClass = () => {
   const { user } = useContext(AuthContext);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/payments/${user.email}`)
+    fetch(`https://elite-fight-club-server.vercel.app/payments/${user.email}`)
       .then((res) => res.json())
       .then((data) => {
         setPayments(data);

@@ -8,7 +8,9 @@ const useInstructors = () => {
   } = useQuery({
     queryKey: ["instructors"],
     queryFn: async () => {
-      const response = await fetch(`http://localhost:5000/instructors`);
+      const response = await fetch(
+        `https://elite-fight-club-server.vercel.app/instructors`
+      );
       return response.json();
     },
   });

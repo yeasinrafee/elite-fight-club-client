@@ -28,7 +28,7 @@ const SignUp = () => {
               email: data.email,
               role: "student",
             };
-            fetch("http://localhost:5000/users", {
+            fetch("https://elite-fight-club-server.vercel.app/users", {
               method: "POST",
               headers: {
                 "content-type": "application/json",

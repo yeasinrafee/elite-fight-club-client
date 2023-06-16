@@ -8,7 +8,7 @@ const Feedback = () => {
     e.preventDefault();
     const form = e.target;
     const feedback = form.feedback.value;
-    fetch(`http://localhost:5000/classes/feedback/${id}`, {
+    fetch(`https://elite-fight-club-server.vercel.app/classes/feedback/${id}`, {
       method: "PATCH",
       headers: {
         "content-type": "application/json",

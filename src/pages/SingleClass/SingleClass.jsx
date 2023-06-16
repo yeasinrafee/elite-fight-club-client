@@ -30,7 +30,7 @@ const SingleClass = ({ singleClass }) => {
         price,
         email: user.email,
       };
-      fetch("http://localhost:5000/selected", {
+      fetch("https://elite-fight-club-server.vercel.app/selected", {
         method: "POST",
         headers: {
           "content-type": "application/json",

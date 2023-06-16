@@ -13,7 +13,7 @@ const useSelectedClass = () => {
     queryKey: ["selected", user?.email],
     queryFn: async () => {
       const res = await fetch(
-        `http://localhost:5000/selected?email=${user.email}`
+        `https://elite-fight-club-server.vercel.app/selected?email=${user.email}`
       );
       return res.json();
     },

@@ -12,7 +12,7 @@ import "@smastrom/react-rating/style.css";
 const Testimonials = () => {
   const [reviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch("http://localhost:5000/testimonials")
+    fetch("https://elite-fight-club-server.vercel.app/testimonials")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);

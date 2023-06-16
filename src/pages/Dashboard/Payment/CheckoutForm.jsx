@@ -34,7 +34,6 @@ const CheckoutForm = ({ id }) => {
   useEffect(() => {
     if (classPrice > 0) {
       axiosSecure.post("/create-payment-intent", { classPrice }).then((res) => {
-        console.log(res.data.clientSecret);
         setClientSecret(res.data.clientSecret);
       });
     }
@@ -82,7 +81,6 @@ const CheckoutForm = ({ id }) => {
     if (confirmError) {
       console.log(confirmError);
     }
-    console.log(paymentIntent);
 
     setProcessing(false);
 
@@ -104,7 +102,6 @@ const CheckoutForm = ({ id }) => {
       };
 
       axiosSecure.post("/payments", payment).then((res) => {
-        console.log(res.data);
         if (res.data.insertedId) {
           //display
         }

@@ -3,7 +3,6 @@ import { AuthContext } from "../../providers/AuthProvider";
 import Swal from "sweetalert2";
 import { useLocation, useNavigate } from "react-router-dom";
 const SingleClass = ({ singleClass }) => {
-  console.log(singleClass);
   const {
     _id,
     class_name,
@@ -15,7 +14,6 @@ const SingleClass = ({ singleClass }) => {
     price,
   } = singleClass;
   const { user } = useContext(AuthContext);
-  console.log(user);
   const navigate = useNavigate();
   const location = useLocation();
   const handleSelectClass = (singleClass) => {

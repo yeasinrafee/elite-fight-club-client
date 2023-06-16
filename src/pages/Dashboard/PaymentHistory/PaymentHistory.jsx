@@ -8,7 +8,6 @@ const PaymentHistory = () => {
       .then((res) => res.json())
       .then((data) => {
         setPayments(data);
-        console.log(data);
       });
   }, []);
   return (

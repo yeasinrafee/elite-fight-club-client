@@ -17,7 +17,8 @@ const Testimonials = () => {
       .then((data) => setReviews(data));
   }, []);
   return (
-    <div className="my-28">
+    <div className="my-24 px-1 md:px-0">
+      <hr className="mb-12" />
       <h2 className="text-3xl font-bold text-amber-400 text-center mb-8 uppercase">
         Testimonials
       </h2>
@@ -30,9 +31,11 @@ const Testimonials = () => {
         >
           {reviews.map((review, i) => (
             <SwiperSlide key={i}>
-              <div className="flex flex-col items-center mx-24 my-10">
+              <div className="flex flex-col items-center mx-16 my-8 md:mx-24 md:my-10">
                 <FaScribd className="text-5xl text-amber-400" />
-                <p className="py-10 px-28">{review.details}</p>
+                <p className="py-5 md:py-10 text-sm md:text-md md:px-28 text-center">
+                  {review.details}
+                </p>
                 <h3 className="text-2xl text-amber-400">{review.name}</h3>
                 <Rating
                   style={{ maxWidth: 180 }}
@@ -44,6 +47,7 @@ const Testimonials = () => {
           ))}
         </Swiper>
       </div>
+      <hr className="mt-14" />
     </div>
   );
 };

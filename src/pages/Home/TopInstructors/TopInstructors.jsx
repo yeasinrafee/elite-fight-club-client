@@ -9,6 +9,7 @@ const TopInstructors = () => {
 
   return (
     <div>
+      <hr className="mb-14" />
       <h2 className="text-3xl font-bold text-amber-400 text-center mb-8 uppercase">
         Popular Instructors
       </h2>
@@ -26,10 +27,12 @@ const TopInstructors = () => {
           {instructors &&
             instructors.map((instructor) => (
               <SwiperSlide key={instructor._id}>
-                <img src={instructor.image} alt="" />
-                <h3 className="text-2xl uppercase text-center -mt-16 text-black">
-                  {instructor.name}
-                </h3>
+                <div className="mb-16 md:mb-28">
+                  <img src={instructor.image} alt="" />
+                  <h3 className="text-sm md:text-2xl uppercase text-center md:-mt-8 text-black">
+                    {instructor.name}
+                  </h3>
+                </div>
               </SwiperSlide>
             ))}
         </Swiper>

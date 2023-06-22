@@ -1,4 +1,4 @@
-# EliteFightClub
+# EliteFightClub Client
 
 ## Complete Project
 

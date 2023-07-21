@@ -54,29 +54,37 @@ const SingleClass = ({ singleClass }) => {
     }
   };
   return (
-    <div key={_id} className="card w-96 bg-base-100 shadow-xl">
+    <div key={_id} className="card w-96 bg-base-100 shadow-xl px-4 mx-auto">
       <figure>
         <img src={image} alt="class image" />
       </figure>
       <div className="card-body">
-        <h2 className="text-2xl text-amber-400 font-bold text-center">
+        <h2 className="text-2xl text-gray-600 uppercase font-bold text-center mb-4">
           {class_name}
         </h2>
         <p>
-          <span className="text-amber-200 font-bold">Instructor:</span>{" "}
+          <span className="text-gray-600 font-bold">Instructor:</span>{" "}
           {instructor_name}
         </p>
         <p>
-          <span className="text-amber-200 font-bold">Available seats:</span>{" "}
+          <span className="text-gray-600 font-bold">Email:</span>{" "}
+          {instructor_email}
+        </p>
+        <p>
+          <span className="text-gray-600 font-bold">Available seats:</span>{" "}
           {available_seats}
         </p>
+        <p>
+          <span className="text-gray-600 font-bold">Student No. :</span>{" "}
+          {number_of_students}
+        </p>
         <div className="card-actions justify-between items-center mt-6">
-          <p className="text-2xl  border border-amber-200 p-1 rounded-md mr-16">
-            <span className="text-amber-200 font-bold">Price:</span> ${price}
+          <p className="text-2xl  p-1 rounded-md mr-16">
+            <span className="text-gray-600 font-bold">Price:</span> ${price}
           </p>
           <button
             onClick={() => handleSelectClass(singleClass)}
-            className="btn btn-primary bg-amber-400 hover:bg-amber-600 border-none text-white"
+            className="btn btn-primary bg-gray-600 hover:bg-gray-400 border-none text-white"
             disabled={available_seats === 0 ? true : false}
           >
             select

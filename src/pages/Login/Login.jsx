@@ -144,7 +144,7 @@ const Login = () => {
 
       <div className="mt-5 w-[250px] mx-auto">
         <button onClick={handleGoogle}>
-          <img src="./assets/images/googleSignIn.png" alt="Google sign in" />
+          <img src="./assets/images/googleSignIn.webp" alt="Google sign in" />
         </button>
       </div>
       <p className="my-5 text-center text-sm">

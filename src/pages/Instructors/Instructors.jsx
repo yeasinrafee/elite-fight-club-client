@@ -6,10 +6,10 @@ const Instructors = () => {
   const [instructors] = useInstructors();
   return (
     <div>
-      <h2 className="text-4xl font-bold text-amber-400 text-center uppercase my-12 ">
+      <h2 className="text-4xl font-bold text-gray-500 text-center uppercase my-12">
         Introducing Our Honorable Instructors
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-content-center items-center gap-9 my-5 md:my-24">
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-content-center items-center gap-16 my-5 md:my-24 w-full">
         {instructors &&
           instructors.map((instructor) => (
             <div
@@ -24,8 +24,8 @@ const Instructors = () => {
                 />
               </figure>
               <div className="card-body items-center text-center">
-                <h2 className="card-title text-amber-400">
-                  Name: {instructor.name}
+                <h2 className="card-title text-gray-500 font-bold">
+                  {instructor.name}
                 </h2>
                 <p>Email: {instructor.email}</p>
               </div>

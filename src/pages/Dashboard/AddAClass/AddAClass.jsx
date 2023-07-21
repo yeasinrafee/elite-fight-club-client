@@ -51,7 +51,7 @@ const AddAClass = () => {
   };
   return (
     <div className="w-full md:w-1/2 mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
-      <h1 className="text-3xl text-amber-400 font-bold text-center">
+      <h1 className="text-3xl text-gray-600 font-bold text-center">
         Add Your Class Details:{" "}
       </h1>
       <form onSubmit={handleClass}>
@@ -114,7 +114,7 @@ const AddAClass = () => {
         <input
           type="submit"
           value="add class"
-          className="btn btn-block bg-amber-400 border-none mt-3 hover:bg-amber-500"
+          className="btn btn-block bg-gray-700 border-none mt-3 hover:bg-gray-400 text-white"
         />
       </form>
     </div>

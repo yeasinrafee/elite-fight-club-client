@@ -12,11 +12,11 @@ const MyClasses = () => {
       });
   }, [user?.email]);
   return (
-    <div className="ml-8">
-      <h2 className="text-3xl text-amber-400 font-bold text-center">
+    <div className="ml-8 mt-24">
+      <h2 className="text-3xl text-gray-600 uppercase font-bold text-center">
         Your Classes
       </h2>
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-content-center items-center gap-9 my-5 md:my-24">
+      <div className="grid grid-cols-1 md:grid-cols-3 justify-content-center items-center gap-9 my-7 md:mb-24">
         {myClasses &&
           myClasses.map((singleClass) => (
             <div
@@ -27,39 +27,39 @@ const MyClasses = () => {
                 <img src={singleClass.image} alt="class image" />
               </figure>
               <div className="card-body">
-                <h2 className="text-2xl text-amber-400 font-bold text-center">
+                <h2 className="text-2xl text-gray-500 uppercase font-bold text-center">
                   {singleClass.class_name}
                 </h2>
                 <p>
-                  <span className="text-amber-300 font-bold">Instructor:</span>{" "}
+                  <span className="text-gray-600 font-bold">Instructor:</span>{" "}
                   {singleClass.instructor_name}
                 </p>
                 <p>
-                  <span className="text-amber-300 font-bold">Email:</span>{" "}
+                  <span className="text-gray-600 font-bold">Email:</span>{" "}
                   {singleClass.instructor_email}
                 </p>
                 <p>
-                  <span className="text-amber-300 font-bold">
+                  <span className="text-gray-600 font-bold">
                     Available seats:
                   </span>{" "}
                   {singleClass.available_seats}
                 </p>
                 <p>
-                  <span className="text-amber-300 font-bold">Price:</span> $
+                  <span className="text-gray-600 font-bold">Price:</span> $
                   {singleClass.price}
                 </p>
                 <p>
-                  <span className="text-amber-300 font-bold">Status: </span>
+                  <span className="text-gray-600 font-bold">Status: </span>
                   <span className="uppercase">{singleClass.status}</span>
                 </p>
                 {singleClass.status == "denied" && (
                   <p>
-                    <span className="text-amber-300 font-bold">Feedback: </span>
+                    <span className="text-gray-600 font-bold">Feedback: </span>
                     {singleClass.feedback}
                   </p>
                 )}
                 <div className="card-actions justify-between items-center mt-6">
-                  <button className="btn btn-primary btn-sm bg-amber-400 hover:bg-amber-600 border-none text-white">
+                  <button className="btn btn-primary btn-sm bg-gray-700 hover:bg-gray-400 border-none text-white">
                     update
                   </button>
                 </div>

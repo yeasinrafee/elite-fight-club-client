@@ -39,7 +39,7 @@ const AllUsers = () => {
 
   return (
     <div className="pl-9 w-full">
-      <h2 className="text-3xl font-semibold text-amber-400 my-7">
+      <h2 className="text-3xl font-semibold text-gray-500 uppercase my-7">
         Total Users: {users.length}
       </h2>
       <div className="overflow-x-auto">
@@ -69,7 +69,7 @@ const AllUsers = () => {
                         : false
                     }
                     onClick={() => handleMakeAdmin(user)}
-                    className="btn btn-outline btn-warning btn-xs"
+                    className="btn btn-outline text-gray-500 outline-gray-500 btn-xs"
                   >
                     Admin
                   </button>
@@ -82,7 +82,7 @@ const AllUsers = () => {
                         : false
                     }
                     onClick={() => handleMakeInstructor(user)}
-                    className="btn btn-outline btn-warning btn-xs"
+                    className="btn btn-outline text-gray-500 outline-gray-500 btn-xs"
                   >
                     Instructor
                   </button>

@@ -50,7 +50,7 @@ const SignUp = () => {
 
   return (
     <div className="w-full md:w-1/2 mx-auto border px-14 pt-10 pb-20 my-10 rounded-md shadow-lg">
-      <h1 className="text-4xl font-bold text-center my-6 text-amber-400">
+      <h1 className="text-4xl font-bold text-center my-6 text-gray-600">
         Please Sign Up
       </h1>
       <form onSubmit={handleSubmit(onSubmit)}>
@@ -176,12 +176,12 @@ const SignUp = () => {
         <input
           type="submit"
           value="Sign Up"
-          className="btn btn-block bg-amber-400 border-none mt-3 hover:bg-amber-500"
+          className="btn btn-block bg-gray-700 border-none mt-3 hover:bg-gray-400 text-white"
         />
       </form>
       <p className="my-5 text-center text-sm">
         Already have an account?{" "}
-        <Link to="/login" className="text-amber-400 font-bold">
+        <Link to="/login" className="text-gray-500 font-bold">
           Login
         </Link>
       </p>

@@ -1,3 +1,7 @@
+// Lazy Image Loading
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import "react-lazy-load-image-component/src/effects/blur.css";
+
 import useInstructors from "../../hooks/useInstructors";
 import useTitle from "../../hooks/useTitle";
 
@@ -17,10 +21,13 @@ const Instructors = () => {
               className="card w-80 h-96 mx-auto bg-base-100 shadow-xl"
             >
               <figure className="px-10 pt-10">
-                <img
+                <LazyLoadImage
                   src={instructor.image}
-                  alt="instructor image"
-                  className="rounded-xl"
+                  className="w-full h-64 object-cover"
+                  alt="Chefs"
+                  effect="blur"
+                  delayTime={300}
+                  delayMethod="throttle"
                 />
               </figure>
               <div className="card-body items-center text-center">

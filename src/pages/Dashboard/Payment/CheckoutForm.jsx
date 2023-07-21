@@ -128,7 +128,7 @@ const CheckoutForm = ({ id }) => {
           }}
         />
         <button
-          className="btn btn-warning btn-sm mt-7 text-white"
+          className="btn bg-gray-700 hover:bg-gray-400 btn-sm mt-7 text-white"
           type="submit"
           disabled={!stripe || !clientSecret || processing}
         >

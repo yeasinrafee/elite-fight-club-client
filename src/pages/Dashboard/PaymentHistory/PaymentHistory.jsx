@@ -12,7 +12,7 @@ const PaymentHistory = () => {
   }, []);
   return (
     <div className="w-full ml-9">
-      <h2 className="text-4xl font-bold text-amber-400 text-center uppercase my-12 ">
+      <h2 className="text-4xl font-bold text-gray-600 text-center uppercase my-12 ">
         your payments
       </h2>
       <div className="overflow-x-auto">

@@ -8,7 +8,7 @@ const Payment = () => {
   const { id } = useParams();
   return (
     <div>
-      <h2 className="text-4xl font-bold text-amber-400 text-center uppercase my-12 ">
+      <h2 className="text-4xl font-bold text-gray-600 text-center uppercase my-12 ">
         Complete Your Payment
       </h2>
       <Elements stripe={stripePromise}>

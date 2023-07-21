@@ -14,7 +14,7 @@ const EnrolledClass = () => {
   }, [user]);
   return (
     <div>
-      <h2 className="text-4xl font-bold text-amber-400 text-center uppercase my-12 ">
+      <h2 className="text-4xl font-bold text-gray-700 text-center uppercase my-12 ">
         enrolled Classes:
       </h2>
 
@@ -26,19 +26,19 @@ const EnrolledClass = () => {
                 <img src={payment.image} alt="class image" />
               </figure>
               <div className="card-body">
-                <h2 className="text-2xl text-amber-400 font-bold text-center mb-5">
+                <h2 className="text-2xl text-gray-600 uppercase font-bold text-center mb-5">
                   {payment.class_name}
                 </h2>
                 <p>
-                  <span className="text-amber-200 font-bold">Instructor:</span>{" "}
+                  <span className="text-gray-600 font-bold">Instructor:</span>{" "}
                   {payment.instructor_name}
                 </p>
                 <p>
-                  <span className="text-amber-200 font-bold">Email:</span>{" "}
+                  <span className="text-gray-600 font-bold">Email:</span>{" "}
                   {payment.instructor_email}
                 </p>
                 <p>
-                  <span className="text-amber-200 font-bold">Enrollment: </span>{" "}
+                  <span className="text-gray-600 font-bold">Enrollment: </span>{" "}
                   <span className="text-green-500 font-bold">Enrolled</span>
                 </p>
               </div>

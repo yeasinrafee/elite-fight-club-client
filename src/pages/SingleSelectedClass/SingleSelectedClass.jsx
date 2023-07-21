@@ -46,27 +46,27 @@ const SingleSelectedClass = ({ singleClass, refetch }) => {
         <img src={image} alt="class image" />
       </figure>
       <div className="card-body">
-        <h2 className="text-2xl text-amber-400 font-bold text-center mb-5">
+        <h2 className="text-2xl text-gray-600 uppercase font-bold text-center mb-5">
           {class_name}
         </h2>
         <p>
-          <span className="text-amber-200 font-bold">Instructor:</span>{" "}
+          <span className="text-gray-600 font-bold">Instructor:</span>{" "}
           {instructor_name}
         </p>
         <p>
-          <span className="text-amber-200 font-bold">Email:</span>{" "}
+          <span className="text-gray-600 font-bold">Email:</span>{" "}
           {instructor_email}
         </p>
         <p>
-          <span className="text-amber-200 font-bold">Available seats:</span>{" "}
+          <span className="text-gray-600 font-bold">Available seats:</span>{" "}
           {available_seats}
         </p>
         <p>
-          <span className="text-amber-200 font-bold">Enrolled:</span>{" "}
+          <span className="text-gray-600 font-bold">Enrolled:</span>{" "}
           {number_of_students}
         </p>
-        <p className="text-2xl border-amber-200">
-          <span className="text-amber-200 font-bold">Price:</span> ${price}
+        <p className="text-2xl border-gray-600">
+          <span className="text-gray-600 font-bold">Price:</span> ${price}
         </p>
         <div className="card-actions justify-between items-center mt-9">
           <button className="btn btn-primary bg-green-400 hover:bg-green-600 border-none text-white">

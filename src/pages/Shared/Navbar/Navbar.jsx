@@ -40,20 +40,20 @@ const Navbar = () => {
               </Tippy>
             }
           </li>
-          <li className="border rounded-md hover:bg-amber-500">
+          <li className="border rounded-md hover:bg-gray-400">
             <Link onClick={() => logOut()}>Logout</Link>
           </li>
         </>
       ) : (
-        <li className="border rounded-md hover:bg-amber-500">
+        <li className="border rounded-md hover:bg-gray-700">
           <Link to="/login">Login</Link>
         </li>
       )}
     </>
   );
   return (
-    <div className="mb-5">
-      <div className="navbar bg-yellow-50 py-4 px-5">
+    <div className="mb-5 bg-gray-50">
+      <div className="navbar py-4 px-5">
         <div className="navbar-start">
           <div className="dropdown z-10">
             <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -80,13 +80,13 @@ const Navbar = () => {
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost normal-case h-16 ">
-            <h2 className="text-2xl font-bold text-amber-400 ml-14 md:ml-0">
+            <h2 className="text-2xl font-bold text-gray-800 ml-14 md:ml-0">
               EliteFight <br />C L U B
             </h2>
           </Link>
         </div>
         <div className="navbar-end hidden lg:flex">
-          <ul className="menu menu-horizontal px-1 text-amber-400 md:text-lg">
+          <ul className="menu menu-horizontal px-1 text-gray-500 md:text-lg">
             {navMenu}
           </ul>
         </div>

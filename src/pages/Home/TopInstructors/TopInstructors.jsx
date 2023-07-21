@@ -10,7 +10,7 @@ const TopInstructors = () => {
   return (
     <div>
       <hr className="mb-14" />
-      <h2 className="text-3xl font-bold text-amber-400 text-center mb-8 uppercase">
+      <h2 className="text-3xl font-bold text-gray-600 text-center mb-8 uppercase">
         Popular Instructors
       </h2>
       <div>
@@ -37,6 +37,7 @@ const TopInstructors = () => {
             ))}
         </Swiper>
       </div>
+      <hr className="mb-20 md:mb-32" />
     </div>
   );
 };

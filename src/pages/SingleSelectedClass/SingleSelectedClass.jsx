@@ -1,5 +1,5 @@
-import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const SingleSelectedClass = ({ singleClass, refetch }) => {
   const {
@@ -15,68 +15,68 @@ const SingleSelectedClass = ({ singleClass, refetch }) => {
 
   const handleDelete = (singleClass) => {
     Swal.fire({
-      title: "Are you sure?",
+      title: 'Are you sure?',
       text: "You won't be able to revert this!",
-      icon: "warning",
+      icon: 'warning',
       showCancelButton: true,
-      confirmButtonColor: "#3085d6",
-      cancelButtonColor: "#d33",
-      confirmButtonText: "Yes, delete it!",
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
     }).then((result) => {
       if (result.isConfirmed) {
         fetch(
           `https://elite-fight-club-server.vercel.app/selected/${singleClass._id}`,
           {
-            method: "DELETE",
+            method: 'DELETE',
           }
         )
           .then((res) => res.json())
           .then((data) => {
             if (data.deletedCount > 0) {
               refetch();
-              Swal.fire("Deleted!", "Your file has been deleted.", "success");
+              Swal.fire('Deleted!', 'Your file has been deleted.', 'success');
             }
           });
       }
     });
   };
   return (
-    <div key={_id} className="card w-96 bg-base-100 shadow-xl">
+    <div key={_id} className=' w-96 bg-base-100 shadow-xl'>
       <figure>
-        <img src={image} alt="class image" />
+        <img src={image} alt='class image' />
       </figure>
-      <div className="card-body">
-        <h2 className="text-2xl text-gray-600 uppercase font-bold text-center mb-5">
+      <div className=' space-y-4 p-5'>
+        <h2 className='text-2xl text-gray-600 uppercase font-bold text-center mb-5'>
           {class_name}
         </h2>
         <p>
-          <span className="text-gray-600 font-bold">Instructor:</span>{" "}
+          <span className='text-gray-600 font-bold'>Instructor:</span>{' '}
           {instructor_name}
         </p>
         <p>
-          <span className="text-gray-600 font-bold">Email:</span>{" "}
+          <span className='text-gray-600 font-bold'>Email:</span>{' '}
           {instructor_email}
         </p>
         <p>
-          <span className="text-gray-600 font-bold">Available seats:</span>{" "}
+          <span className='text-gray-600 font-bold'>Available seats:</span>{' '}
           {available_seats}
         </p>
         <p>
-          <span className="text-gray-600 font-bold">Enrolled:</span>{" "}
+          <span className='text-gray-600 font-bold'>Enrolled:</span>{' '}
           {number_of_students}
         </p>
-        <p className="text-2xl border-gray-600">
-          <span className="text-gray-600 font-bold">Price:</span> ${price}
+        <p className=' border-gray-600'>
+          <span className='text-gray-600 font-bold'>Price:</span> ${price}
         </p>
-        <div className="card-actions justify-between items-center mt-9">
-          <button className="btn btn-primary bg-green-400 hover:bg-green-600 border-none text-white">
+        <div className='card-actions justify-between items-center mt-9'>
+          <button className='px-4 py-2 duration-300 bg-green-400 hover:bg-green-300 border-none text-white'>
             <Link to={`/dashboard/payment/${_id}`}>Pay Class</Link>
           </button>
           <button
             onClick={() => handleDelete(singleClass)}
-            className="btn btn-primary bg-red-400 hover:bg-red-600 border-none text-white"
+            className='px-4 py-2 duration-300 bg-red-400 hover:bg-red-600 border-none text-white'
           >
-            delete
+            Delete
           </button>
         </div>
       </div>

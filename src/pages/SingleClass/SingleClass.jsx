@@ -1,7 +1,7 @@
-import { useContext } from "react";
-import { AuthContext } from "../../providers/AuthProvider";
-import Swal from "sweetalert2";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useContext } from 'react';
+import { AuthContext } from '../../providers/AuthProvider';
+import Swal from 'sweetalert2';
+import { useLocation, useNavigate } from 'react-router-dom';
 const SingleClass = ({ singleClass }) => {
   const {
     _id,
@@ -30,10 +30,10 @@ const SingleClass = ({ singleClass }) => {
         price,
         email: user.email,
       };
-      fetch("https://elite-fight-club-server.vercel.app/selected", {
-        method: "POST",
+      fetch('https://elite-fight-club-server.vercel.app/selected', {
+        method: 'POST',
         headers: {
-          "content-type": "application/json",
+          'content-type': 'application/json',
         },
         body: JSON.stringify(selectedClass),
       })
@@ -41,50 +41,50 @@ const SingleClass = ({ singleClass }) => {
         .then((data) => {
           if (data.insertedId) {
             Swal.fire({
-              position: "top-end",
-              icon: "success",
-              title: "Your class has been selected",
+              position: 'top-end',
+              icon: 'success',
+              title: 'Your class has been selected',
               showConfirmButton: false,
               timer: 1500,
             });
           }
         });
     } else {
-      navigate("/login", { state: { from: location } });
+      navigate('/login', { state: { from: location } });
     }
   };
   return (
-    <div key={_id} className="card w-96 bg-base-100 shadow-xl px-4 mx-auto">
+    <div key={_id} className=' w-80 bg-base-100 shadow-md px-4 mx-auto'>
       <figure>
-        <img src={image} alt="class image" />
+        <img src={image} alt='class image' />
       </figure>
-      <div className="card-body">
-        <h2 className="text-2xl text-gray-600 uppercase font-bold text-center mb-4">
+      <div className='space-y-3'>
+        <h2 className='text-2xl mt-5 text-gray-600 uppercase font-bold text-center mb-4'>
           {class_name}
         </h2>
         <p>
-          <span className="text-gray-600 font-bold">Instructor:</span>{" "}
+          <span className='text-gray-600  font-bold'>Instructor:</span>{' '}
           {instructor_name}
         </p>
         <p>
-          <span className="text-gray-600 font-bold">Email:</span>{" "}
+          <span className='text-gray-600 font-bold'>Email:</span>{' '}
           {instructor_email}
         </p>
         <p>
-          <span className="text-gray-600 font-bold">Available seats:</span>{" "}
+          <span className='text-gray-600 font-bold'>Available seats:</span>{' '}
           {available_seats}
         </p>
         <p>
-          <span className="text-gray-600 font-bold">Student No. :</span>{" "}
+          <span className='text-gray-600 font-bold'>Student No. :</span>{' '}
           {number_of_students}
         </p>
-        <div className="card-actions justify-between items-center mt-6">
-          <p className="text-2xl  p-1 rounded-md mr-16">
-            <span className="text-gray-600 font-bold">Price:</span> ${price}
+        <div className='card-actions justify-between items-center py-4 mt-6'>
+          <p className='  p-1 rounded-md mr-16'>
+            <span className='text-gray-600 font-bold'>Price:</span> ${price}
           </p>
           <button
             onClick={() => handleSelectClass(singleClass)}
-            className="btn btn-primary bg-gray-600 hover:bg-gray-400 border-none text-white"
+            className='px-4 py-1 uppercase bg-gray-600 hover:bg-gray-400 border-none text-white'
             disabled={available_seats === 0 ? true : false}
           >
             select

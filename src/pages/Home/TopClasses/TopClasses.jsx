@@ -1,40 +1,45 @@
 // Lazy Image loading
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import "react-lazy-load-image-component/src/effects/blur.css";
+import { Card } from 'flowbite-react';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 
-import useClasses from "../../../hooks/useClasses";
+import useClasses from '../../../hooks/useClasses';
 
 const TopClasses = () => {
   const [classes] = useClasses();
+  console.log(classes);
   return (
-    <div className="my-16 md:my-28 px-3 md:px-10 w-full">
-      <hr className="mb-14" />
-      <h1 className="text-3xl font-bold text-gray-600 text-center mb-8 uppercase">
-        Popular Classes
+    <div className='my-16 md:my-28 px-3 md:px-10 w-full'>
+      <hr className='mb-14' />
+      <h1 className='lg:text-3xl text-2xl font-bold text-gray-600 text-center mb-20 uppercase'>
+        Popular <span className='text-yellow-300'>Classes</span>
       </h1>
-      <div className="grid grid-cols-1 md:grid-cols-3 justify-items-center items-center gap-6 w-full">
+      <div className='grid grid-cols-1 md:grid-cols-3 justify-items-center gap-12 items-center  w-full'>
         {classes &&
           classes.slice(0, 6).map((tClass) => (
-            <div
+            <Card
               key={tClass._id}
-              className="card card-compact bg-base-100 shadow-xl h-full px-3 md:px-0 w-full"
+              className=''
+              imgSrc={tClass.image}
+              horizontal
             >
-              <figure>
-                <LazyLoadImage
-                  src={tClass.image}
-                  className="w-full h-64 object-cover"
-                  alt="Chefs"
-                  effect="blur"
-                  delayTime={300}
-                  delayMethod="throttle"
-                />
-              </figure>
-              <div className="card-body ">
-                <h2 className="uppercase font-bold text-xl text-center text-gray-600">
+              <div className='space-y-3 text-sm'>
+                <h5 className='text-2xl text-yellow-300 uppercase mb-6 font-bold tracking-wider dark:text-white'>
                   {tClass.class_name}
-                </h2>
+                </h5>
+                <p className='font-normal text-gray-700 dark:text-gray-400'>
+                  Instructor Name: {tClass.instructor_name}
+                </p>
+                <p className='font-normal text-gray-700 dark:text-gray-400'>
+                  Number of Students: {tClass.number_of_students}
+                </p>
+                <p className='font-normal text-gray-700 dark:text-gray-400'>
+                  Available Seats: {tClass.available_seats}
+                </p>
+                <p className='font-normal text-gray-700 dark:text-gray-400'>
+                  Price: {tClass.price} $
+                </p>
               </div>
-            </div>
+            </Card>
           ))}
       </div>
     </div>
